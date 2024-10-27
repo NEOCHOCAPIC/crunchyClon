@@ -1,4 +1,5 @@
 ---
+// Carousel.astro
 import CardAnime from "./CardAnime.astro";
 import Animes from "../data/Carrusel.json";
 ---
@@ -13,9 +14,8 @@ import Animes from "../data/Carrusel.json";
       class="flex transition-transform duration-500 ease-out"
       id="carousel-track"
     >
-      <!-- Las tarjetas se insertarán aquí dinámicamente -->
       {
-        Animes.map((anime, index) => (
+        Animes.map((anime) => (
           <CardAnime
             titulo={anime.titulo}
             imagen={anime.imagen}
@@ -25,7 +25,6 @@ import Animes from "../data/Carrusel.json";
             temporadas={anime.temporadas}
             episodios={anime.episodios}
             descripcion={anime.descripcion}
-            class="w-1/5 flex-shrink-0"
           />
         ))
       }
@@ -34,7 +33,7 @@ import Animes from "../data/Carrusel.json";
 
   <button
     id="prev-button"
-    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10"
+    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +52,7 @@ import Animes from "../data/Carrusel.json";
 
   <button
     id="next-button"
-    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10"
+    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -81,35 +80,34 @@ import Animes from "../data/Carrusel.json";
   const nextButton = document.getElementById(
     "next-button"
   ) as HTMLButtonElement;
-  let currentIndex: number = 0;
-  const itemsPerPage: number = 5;
+  let currentIndex = 0;
 
-  function updateCarouselPosition(): void {
-    const totalItems: number = carouselTrack.children.length; // Total de tarjetas
-    const totalGroups: number = Math.ceil(totalItems / itemsPerPage); // Grupos totales
-    const percentagePerSlide: number = 100 / totalGroups;
+  function getItemsPerPage() {
+    if (window.innerWidth < 640) return 2;
+    if (window.innerWidth < 768) return 2;
+    if (window.innerWidth < 1024) return 3;
+    if (window.innerWidth < 1280) return 4;
+    return 5;
+  }
 
-    // Log para depuración
-    console.log(
-      `Total Items: ${totalItems}, Total Groups: ${totalGroups}, Current Index: ${currentIndex}`
-    );
+  function updateCarouselPosition() {
+    const itemsPerPage = getItemsPerPage();
+    const totalItems = carouselTrack.children.length;
+    const itemWidth = carouselTrack.children[0].clientWidth; // Ancho exacto de una tarjeta
+    const offset = currentIndex * itemWidth;
 
-    // Actualiza la posición del carrusel
-    carouselTrack.style.transform = `translateX(-${currentIndex * percentagePerSlide}%)`;
+    carouselTrack.style.transform = `translateX(-${offset}px)`;
 
-    // Habilita o desactiva los botones
-    prevButton.disabled = currentIndex === 0; // Desactivar botón anterior
-    nextButton.disabled = currentIndex >= totalGroups - 1; // Desactivar botón siguiente
+    // Actualizar la lógica de desactivación de botones
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex >= totalItems - 1; // Se desactiva solo cuando llega al último elemento
   }
 
   nextButton.addEventListener("click", () => {
-    const totalItems: number = carouselTrack.children.length; // Total de tarjetas
-    const totalGroups: number = Math.ceil(totalItems / itemsPerPage);
-    console.log(
-      `Next Button Clicked: Current Index: ${currentIndex}, Total Groups: ${totalGroups}`
-    );
+    const itemsPerPage = getItemsPerPage();
+    const totalItems = carouselTrack.children.length;
 
-    if (currentIndex < totalGroups - 1) {
+    if (currentIndex < totalItems - itemsPerPage) {
       currentIndex++;
       updateCarouselPosition();
     }
@@ -122,6 +120,14 @@ import Animes from "../data/Carrusel.json";
     }
   });
 
-  window.addEventListener("resize", updateCarouselPosition);
+  window.addEventListener("resize", () => {
+    const itemsPerPage = getItemsPerPage();
+    currentIndex = Math.min(
+      currentIndex,
+      Math.max(0, carouselTrack.children.length - itemsPerPage)
+    );
+    updateCarouselPosition();
+  });
+
   updateCarouselPosition(); // Inicializa la posición del carrusel
 </script>
