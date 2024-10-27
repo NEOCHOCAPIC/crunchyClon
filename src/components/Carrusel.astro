@@ -9,7 +9,7 @@ import Animes from "../data/Animes.json";
   {
     Animes.map((anime, index) => (
       <div
-        class={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? "opacity-100" : "opacity-0"}`}
+        class={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? "opacity-100" : "opacity-0"} `}
         data-index={index}
       >
         <img
@@ -21,7 +21,9 @@ import Animes from "../data/Animes.json";
         <div class="absolute top-40 left-0 right-0 pl-20 text-white z-10">
           <img src={anime.logo} alt={`${anime.title} logo`} class="w-64 mb-4" />
           <p class="text-sm mb-2">{anime.rating}</p>
-          <p class="text-xl mb-4 max-w-2xl">{anime.description}</p>
+          <p class="text-xl mb-4 max-w-2xl hidden md:block">
+            {anime.description}
+          </p>
           <div class="flex items-center space-x-4">
             <button class="bg-orange-500 hover:bg-orange-600 text-neutral-900 px-6 py-2 text-lg font-bold transition duration-300 flex items-center z-10">
               <svg
