@@ -18,22 +18,36 @@ import Animes from "../data/Animes.json";
           class="absolute inset-0 w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70" />
-        <div class="absolute top-40 left-0 right-0 pl-20 text-white"> <!-- Cambiado 'bottom-0' a 'top-16' -->
+        <div class="absolute top-40 left-0 right-0 pl-20 text-white z-10">
           <img src={anime.logo} alt={`${anime.title} logo`} class="w-64 mb-4" />
           <p class="text-sm mb-2">{anime.rating}</p>
           <p class="text-xl mb-4 max-w-2xl">{anime.description}</p>
           <div class="flex items-center space-x-4">
-            <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-lg font-bold transition duration-300 flex items-center">
-              <span class="mr-2">▶</span> COMENZAR A VER E1
-            </button>
-            <button class="border border-white p-2 rounded-full hover:bg-white hover:text-black transition duration-300">
+            <button class="bg-orange-500 hover:bg-orange-600 text-neutral-900 px-6 py-2 text-lg font-bold transition duration-300 flex items-center z-10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mr-2"
+              >
+                <path d="M5 3l14 9-14 9V3z" />
+              </svg>
+              COMENZAR A VER E1
+            </button>
+            <button class="border border-orange-500 p-2  hover:text-black transition duration-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="orange"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
