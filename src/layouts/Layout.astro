@@ -11,6 +11,11 @@ const { titulo = "no definido", descripcion = "no definido" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://www.crunchyroll.com/build/assets/img/favicons/favicon-v2-16x16.png"
+      type="image/x-icon"
+    />
     <meta name="description" content={descripcion} />
     <link
       rel="stylesheet"
@@ -18,7 +23,7 @@ const { titulo = "no definido", descripcion = "no definido" } = Astro.props;
     />
     <title>{titulo}</title>
   </head>
-  <body class="bg-neutral-800">
+  <body class="bg-black">
     <slot />
   </body>
 </html>
