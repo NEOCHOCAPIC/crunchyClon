@@ -12,11 +12,13 @@ import Animes from "../data/Animes.json";
         class={` carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? "opacity-100" : "opacity-0"} `}
         data-index={index}
       >
-        <img
-          src={anime.image}
-          alt={anime.title}
-          class="absolute inset-0 w-full h-3/4 md:h-full object-cover"
-        />
+        <div class="absolute inset-0 w-full h-full">
+          <img
+            src={anime.image}
+            alt={anime.title}
+            class="w-full h-full object-cover"
+          />
+        </div>
         <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70" />
         <div class="absolute  top-1/2  md:top-40 left-0 right-0 md:pl-20 text-white z-10 flex flex-col items-center md:items-start">
           <img src={anime.logo} alt={`${anime.title} logo`} class="w-64 mb-4" />
@@ -42,14 +44,14 @@ import Animes from "../data/Animes.json";
               </svg>
               COMENZAR A VER E1
             </button>
-            <button class="border-[2px] border-orange-500 p-2  hover:text-black transition duration-300">
+            <button class="border-[3px] border-orange-500 p-2  hover:text-black transition duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="orange"
+                stroke="#f29316"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"

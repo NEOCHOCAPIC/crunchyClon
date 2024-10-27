@@ -1,5 +1,6 @@
 ---
 import crunchy from "../assets/img/cruncgy.svg";
+import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
 ---
 
 <header class="bg-[#23252b]">
@@ -24,7 +25,12 @@ import crunchy from "../assets/img/cruncgy.svg";
       </svg>
     </button><!-- Fin de mi menu hamburguesa -->
     <nav class="flex items-center space-x-8">
-      <img src={crunchy.src} alt="Logo de Crunchyroll" />
+      <img src={CrunchyMovil.src} alt="Logo de Crunchyroll" class="lg:hidden" />
+      <img
+        src={crunchy.src}
+        alt="Logo de Crunchyroll"
+        class="hidden md:block"
+      />
       <ul class="hidden lg:flex space-x-5 text-white">
         <li>
           <a
