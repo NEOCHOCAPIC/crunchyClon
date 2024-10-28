@@ -5,7 +5,8 @@ export default {
 		extend: {
 			colors: {
 				'custom-yellow': 'rgb(250, 184, 24)', 
-					gris: '#a0a0a0'// Agrega tu color aquí
+					gris: '#a0a0a0',
+					negro:'#23252b'// Agrega tu color aquí
 			  },
 			backgroundImage: {
 				'custom-gradient': 'linear-gradient(180deg, rgba(0, 0, 0, 0), #213944)',

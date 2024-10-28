@@ -3,33 +3,35 @@ import crunchy from "../assets/img/cruncgy.svg";
 import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
 ---
 
-<header class="bg-[#23252b]">
-  <div class="flex max-w-7xl mx-auto justify-between items-center p-4">
-    <!-- Menú hamburguesa para moviles -->
-    <button
-      id="menu-button"
-      class="text-white lg:hidden focus:outline-none h-10"
-    >
-      <svg
-        class="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button><!-- Fin de mi menu hamburguesa -->
+<header class="bg-[#23252b] fixed z-50 w-full">
+  <div
+    class="flex max-w-7xl md:mx-auto justify-between items-center p-0 mt-0 mx-4"
+  >
     <nav class="flex items-center space-x-8">
+      <!-- Menú hamburguesa para moviles -->
+      <button
+        id="menu-button"
+        class="text-white lg:hidden focus:outline-none h-10"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button><!-- Fin de mi menu hamburguesa -->
       <a href="/">
         <img
           src={CrunchyMovil.src}
           alt="Logo de Crunchyroll"
-          class="lg:hidden"
+          class="md:hidden lg:hidden"
         />
         <img
           src={crunchy.src}
@@ -61,7 +63,35 @@ import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
         </li>
       </ul>
     </nav>
-    <div class="text-white items-center">
+    <div class="text-white items-center flex">
+      <a
+        href=""
+        class="hover:bg-gray-900 px-3 py-5 transition duration-150 ease-in-out flex"
+      >
+        <div class="flex">
+          <svg
+            class="premium-filled-icon--nW2Vi left-icon premium-icon h-8 w-auto transition-colors duration-200 inline-block"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            data-t="premium-filled-svg"
+            aria-labelledby="premium-filled-svg"
+            aria-hidden="true"
+            role="img"
+          >
+            <title id="premium-filled-svg">Premium</title>
+            <path
+              class="fill-custom-yellow transition-colors duration-200"
+              d="M2.419 13L0 4.797 4.837 6.94 8 2l3.163 4.94L16 4.798 13.581 13z"
+            ></path>
+          </svg>
+        </div>
+        <div class="flex flex-col ml-1">
+          <span class="text-xs text-custom-yellow max-md:hidden"
+            >PROBAR GRATIS</span
+          >
+          <span class="text-xs max-md:hidden">PREMIUM</span>
+        </div>
+      </a>
       <a
         href="#"
         class="hover:bg-gray-900 px-3 py-5 transition duration-150 ease-in-out"
@@ -82,7 +112,7 @@ import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
       </a>
       <a
         href="#"
-        class="hover:bg-gray-900 px-3 py-5 transition duration-150 ease-in-out"
+        class="hover:bg-gray-900 px-3 py-5 transition duration-150 ease-in-out max-md:hidden"
       >
         <svg
           class="w-6 h-6 inline-block"
