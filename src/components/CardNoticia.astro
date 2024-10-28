@@ -3,21 +3,21 @@ const { imagen, titulo, descripcion } = Astro.props;
 ---
 
 <div
-  class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  class="max-md:m-5 m-3 max-md:grid max-md:grid-col-2 max-w-80 bg-negro shadow dark:bg-gray-800 dark:border-gray-700"
 >
   <a href="#">
-    <img class="rounded-t-lg" src={imagen} alt="" />
+    <img src={imagen} alt="" />
   </a>
-  <div class="p-5">
+  <div class="bg-negro">
     <a href="#">
       <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        class="text-1xl font-bold tracking-tight text-gray-900 dark:text-white"
       >
         {titulo}
       </h5>
     </a>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+    <small class="mb-3 font-normal text-gray-700 dark:text-gray-400">
       {descripcion}
-    </p>
+    </small>
   </div>
 </div>

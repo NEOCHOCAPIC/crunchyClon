@@ -1,5 +1,12 @@
 [
     {
+        "title": "One Piece",
+        "image": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=94,width=1920/Curation%20Testing/UAT%20Round%203%20testing/OnePiece-UW-LTR.png",
+        "logo": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/Curation%20Testing/UAT%20Round%203%20testing/OnePiece-UW-Logo.png",
+        "rating": "14+ • Sub | Dob",
+        "description": "Monkey D. Luffy se niega a que nadie se interponga en su camino para convertirse en Rey de los Piratas. Se lanza a surcar los mares y se convertirá..."
+        },
+    {
     "title": "Re:ZERO",
     "image": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=94,width=1920/CurationAssets/ReZERO/SEASON%203/ULTRA-WIDE/ReZero-S3C1-KV1-UW-LTR.png",
     "logo": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480/CurationAssets/ReZERO/SEASON%203/ULTRA-WIDE/ReZero-S3C1-KV1-UW-Logo-ENG.png",

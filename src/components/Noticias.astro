@@ -1,58 +1,107 @@
 ---
 import CardNoticia from "./CardNoticia.astro";
+import CardN2 from "./CardN2.astro";
 ---
 
-<section class="bg-gradient-to-b from-[#FFA726] to-[#FB8C00]">
-  <div class="max-w-[80rem] mx-auto bg-negro">
-    <div class="flex justify-between text-white">
-      <div class="flex">
-        <svg
-          class="feed-header__icon--LlqDV h-6 w-auto"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          data-t="crunchyroll-news-svg"
-          aria-labelledby="crunchyroll-news-svg"
-          aria-hidden="true"
-          role="img"
-          ><title id="crunchyroll-news-svg">Noticias de Crunchyroll</title><path
-            d="M14.223 5.143c2.325 0 3.539 3.32 3.539 6.568 0 3.248-1.215 6.548-3.58 6.516a2.307 2.307 0 01-.745-.132h-.063l-1.35-.48-2.638 2.195-6.281-2.195v-3.157l-.838-.296-.026-.013C2.064 14.055 1 13.42 1 11.73 1 9.886 2.268 9.23 2.268 9.23l.136-.062 10.972-3.902h.104a2.21 2.21 0 01.744-.122h-.001zm-9.025 10.01v1.021l3.717 1.328.859-.684-4.576-1.665zm8.952-7.956c-.388 0-1.434 1.553-1.434 4.514 0 2.961 1.068 4.514 1.435 4.514l.073-.01.042-.005c.426-.102 1.402-1.63 1.402-4.499 0-2.973-1.132-4.515-1.518-4.515v.001zm-2.963 1.051l-7.936 2.788c-.029.04-.15.233-.15.694 0 .514.171.624.171.624l7.915 2.799-.117-.421a11.859 11.859 0 01-.375-3.02 11.831 11.831 0 01.492-3.464zm7.99 9.103l2.825 3.037-1.415 1.517-2.823-3.036 1.412-1.52v.002zM23 10.88v2.147h-3.996V10.88H23zM20.586 2L22 3.519l-2.826 3.037-1.412-1.519L20.586 2z"
-          ></path></svg
-        >
-        <h2>Noticias Crunchyroll</h2>
-      </div>
-      <a href="">
-        <span class="flex">
-          <span>Ver Todas</span>
+<section class="bg-gradient-to-b from-[#FFA726] to-[#FB8C00] py-4">
+  <div class="max-w-[87rem] mx-3 md:mx-auto bg-negro text-white">
+    <div class="max-w-7xl md:mx-auto mx-3">
+      <div class="flex justify-between py-4">
+        <div class="flex">
           <svg
-            class="angle--pJ1yZ angle--is-right--iTQzd feed-header__view-link-icon--8jqah h-6 w-auto"
+            class="feed-header__icon--LlqDV h-6 w-auto"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            data-t="angle-right-svg"
-            aria-labelledby="angle-svg"
+            data-t="crunchyroll-news-svg"
+            aria-labelledby="crunchyroll-news-svg"
             aria-hidden="true"
             role="img"
-            ><title id="angle-svg">Siguiente</title><path
-              d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg
+            ><title id="crunchyroll-news-svg">
+              Noticias de Crunchyroll
+            </title><path
+              fill="white"
+              d="M14.223 5.143c2.325 0 3.539 3.32 3.539 6.568 0 3.248-1.215 6.548-3.58 6.516a2.307 2.307 0 01-.745-.132h-.063l-1.35-.48-2.638 2.195-6.281-2.195v-3.157l-.838-.296-.026-.013C2.064 14.055 1 13.42 1 11.73 1 9.886 2.268 9.23 2.268 9.23l.136-.062 10.972-3.902h.104a2.21 2.21 0 01.744-.122h-.001zm-9.025 10.01v1.021l3.717 1.328.859-.684-4.576-1.665zm8.952-7.956c-.388 0-1.434 1.553-1.434 4.514 0 2.961 1.068 4.514 1.435 4.514l.073-.01.042-.005c.426-.102 1.402-1.63 1.402-4.499 0-2.973-1.132-4.515-1.518-4.515v.001zm-2.963 1.051l-7.936 2.788c-.029.04-.15.233-.15.694 0 .514.171.624.171.624l7.915 2.799-.117-.421a11.859 11.859 0 01-.375-3.02 11.831 11.831 0 01.492-3.464zm7.99 9.103l2.825 3.037-1.415 1.517-2.823-3.036 1.412-1.52v.002zM23 10.88v2.147h-3.996V10.88H23zM20.586 2L22 3.519l-2.826 3.037-1.412-1.519L20.586 2z"
+            ></path></svg
           >
-        </span>
-      </a>
-    </div>
-    <div>
-      <div>
-        <h4>Noricias de Crunchyroll</h4>
-        <CardNoticia
-          imagen="https://a.storyblok.com/f/178900/1200x800/be58cfcbaf/one-piece-miniso.jpg/m/360x0"
-          titulo=" [Latinoamérica] MINISO lanza colección de One Piece '"
-          descripcion="La serie se estrenará el 21 de octubre en Crunchyroll"
-        />
-        <CardNoticia
-          imagen="https://a.storyblok.com/f/178900/1920x1080/73393b35df/ado-hibana-world-tour.png/m/360x0"
-          titulo="Ado regresa en 2025 con su gira mundial “Hibana”, en alianza con Crunchyroll "
-          descripcion="La serie se estrenará el 21 de octubre en Crunchyroll"
-          <div
+          <h2 class="font-bold text-1xl md:text-3xl ml-2">
+            Noticias Crunchyroll
+          </h2>
+        </div>
+        <a href="">
+          <span class="flex">
+            <span class="text-gris font-bold max-md:hidden">Ver Todas</span>
+            <svg
+              class="angle--pJ1yZ angle--is-right--iTQzd feed-header__view-link-icon--8jqah h-6 w-auto"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              data-t="angle-right-svg"
+              aria-labelledby="angle-svg"
+              aria-hidden="true"
+              role="img"
+              ><title id="angle-svg">Siguiente</title><path
+                fill="#a0a0a0"
+                d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg
+            >
+          </span>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr]">
+        <div>
+          <h4 class="text-1xl pb-2">Noticias de Crunchyroll</h4>
+          <CardNoticia
+            imagen="https://a.storyblok.com/f/178900/1200x800/be58cfcbaf/one-piece-miniso.jpg/m/360x0"
+            titulo=" [Latinoamérica] MINISO lanza colección de One Piece '"
+            descripcion="La serie se estrenará el 21 de octubre en Crunchyroll"
+          />
+          <CardNoticia
+            imagen="https://a.storyblok.com/f/178900/1920x1080/73393b35df/ado-hibana-world-tour.png/m/360x0"
+            titulo="Ado regresa en 2025 con su gira mundial “Hibana”, en alianza con Crunchyroll "
+            descripcion="La serie se estrenará el 21 de octubre en Crunchyroll"
+          />
+        </div>
+        <div
+          class="max-md:border-t max-md:border-gris flex flex-col items-start"
         >
-          <h4>Mas Recientes</h4>
-        </CardNoticia>
+          <h4 class="text-1xl pb-2">Mas recientes</h4>
+          <div class="">
+            <CardN2
+              url="https://a.storyblok.com/f/178900/960x638/8d422ecb14/himika-akaneya-artist-photo.jpg/m/0x88"
+              titulo="Himika Akaneya lanzó el vídeo musical del ending de MF GHOST Temporada 2"
+              sub1="Oct 28, 2024 9:00am GMT-3"
+              sub2="por Amílcar Trejo Mosquera"
+            />
+            <CardN2
+              url="https://a.storyblok.com/f/178900/960x640/b026c25a35/halca-artist-photo.jpg/m/0x88"
+              titulo="halca comparte el vídeo musical del ending de The Stories of Girls Who Couldn't Be Magicians"
+              sub1="Oct 28, 2024 8:35am GMT-3"
+              sub2="por Amílcar Trejo Mosquera"
+            />
+            <CardN2
+              url="https://a.storyblok.com/f/178900/960x540/7f5bdbf97f/shiyui-hollow-mv.png/m/0x88"
+              titulo="Vean el video musical del openign de DEMON LORD 2099"
+              sub1="Oct 28, 2024 7:30am GMT-3"
+              sub2="por Amílcar Trejo Mosquera"
+            />
+            <CardN2
+              url="https://a.storyblok.com/f/178900/1920x1080/dbed1d5887/steinsgate_visual_novel_header.jpg/m/0x88"
+              titulo="STEINS;GATE REBOOT fue anunciado en el evento 15 aniversario de la novela visual"
+              sub1="Oct 27, 2024 2:30pm GMT-3"
+              sub2="por Amílcar Trejo Mosquera"
+            />
+            <CardN2
+              url="https://a.storyblok.com/f/178900/750x422/7349c619fe/tower-of-god-season-2.jpg/m/0x88"
+              titulo="Tower of God Temporada 2 suma nuevas voces a su reparto para el episodio 17"
+              sub1="Oct 27, 2024 1:30pm GMT-3"
+              sub2="por Amílcar Trejo Mosquera"
+            />
+            <CardN2
+              url="https://a.storyblok.com/f/178900/1227x697/de63993b6f/arknights_rise_form_ember_header.jpg/m/0x88"
+              titulo="Arknights: RISE FROM EMBER revela un nuevo vídeo promocional de su tercera temporada"
+              sub1="Oct 27, 2024 1:00pm GMT-3"
+              sub2="por Sofía Pichihua"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>

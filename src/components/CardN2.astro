@@ -1,0 +1,30 @@
+---
+interface Props {
+  url: string;
+  titulo: string;
+  sub1: string;
+  sub2: string;
+}
+const { url, titulo, sub1, sub2 } = Astro.props;
+---
+
+<div class="flex mb-4">
+  <div class="max-h-30 max-w-30">
+    <a href="">
+      <img src={url} alt="" class="max-w-20 max-h-20" />
+    </a>
+  </div>
+  <div class="ml-3">
+    <a href="">
+      <h4>
+        {titulo}
+      </h4>
+    </a>
+    <div>
+      <a href="">
+        <small>{sub1}</small>
+        <small>{sub2}</small>
+      </a>
+    </div>
+  </div>
+</div>
