@@ -9,6 +9,7 @@ import Footer from "../components/Footer.astro";
 import Gato from "../components/Gato.astro";
 import Noticias from "../components/Noticias.astro";
 import Episodios from "../components/Episodios.astro";
+import AnimeGrande from "../components/AnimeGrande.astro";
 ---
 
 <Layout
@@ -29,6 +30,9 @@ import Episodios from "../components/Episodios.astro";
     link="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=2700/CurationAssets/Tying%20the%20Knot%20with%20an%20Amagami%20Sister/SEASON%201/MARKETING%20BANNER/TyingtheKnotwithanAmagamiSister-Banner-2100x700-ES.png"
   />
   <CarruselPequeno Animes={Animes} />
+  <AnimeGrande />
+  <CarruselPequeno Animes={Animes} />
+  <AnimeGrande />
   <Gato />
   <Footer />
 </Layout>
