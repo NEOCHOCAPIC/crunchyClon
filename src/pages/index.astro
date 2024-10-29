@@ -1,4 +1,5 @@
 ---
+import Animes from "../data/Carrusel.json";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Carrusel from "../components/Carrusel.astro";
@@ -7,6 +8,7 @@ import ImageLink from "../components/ImageLink.astro";
 import Footer from "../components/Footer.astro";
 import Gato from "../components/Gato.astro";
 import Noticias from "../components/Noticias.astro";
+import Episodios from "../components/Episodios.astro";
 ---
 
 <Layout
@@ -15,9 +17,18 @@ import Noticias from "../components/Noticias.astro";
 >
   <Header />
   <Carrusel />
-  <CarruselPequeno />
-  <ImageLink />
+  <CarruselPequeno Animes={Animes} />
+  <ImageLink
+    link="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=2700/CurationAssets/Overlord/Sacred%20Kingdom%20Movie/Catch%20Up/Overlord-SacredKingdom-CatchUp-Banner-2100x700-ES.png"
+  />
+  <CarruselPequeno Animes={Animes} />
+  <CarruselPequeno Animes={Animes} />
+  <Episodios />
   <Noticias />
+  <ImageLink
+    link="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=2700/CurationAssets/Tying%20the%20Knot%20with%20an%20Amagami%20Sister/SEASON%201/MARKETING%20BANNER/TyingtheKnotwithanAmagamiSister-Banner-2100x700-ES.png"
+  />
+  <CarruselPequeno Animes={Animes} />
   <Gato />
   <Footer />
 </Layout>

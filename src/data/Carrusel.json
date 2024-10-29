@@ -6,10 +6,9 @@
         "doblaje": "Sub | Dob",
         "episodios": "29 episodios",
         "temporadas": "2 temporadas",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Acción, Fantasía", 
         "rating": "4.8",
         "votos": "1,000"
-
     },
     {
         "imagen": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/cbb55a6382682bf71e91f685c6473c5a.jpg",
@@ -18,7 +17,7 @@
         "doblaje": "Sub | Dob",
         "episodios": "148 episodios",
         "temporadas": "6 temporadas",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Aventura, Acción", 
         "rating": "4.9",
         "votos": "1,000"
     },
@@ -29,29 +28,29 @@
         "doblaje": "Sub | Dob",
         "episodios": "291 episodios",
         "temporadas": "9 temporadas",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Acción, Aventura", 
         "rating": "4.9",
         "votos": "1,000"
     },
     {
         "imagen": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/13d6e1ce564b2080bcc39f8ef1288690.jpg",
-        "titulo": "Swort art online",
+        "titulo": "Sword Art Online",
         "descripcion": "Kirito y otros jugadores quedan atrapados en un juego de realidad virtual. Para salir, deben completar el juego.",
         "doblaje": "Sub | Dob",
         "episodios": "96 episodios",
         "temporadas": "4 temporadas",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Acción, Ciencia Ficción", 
         "rating": "4.9",
         "votos": "1,000"
     },
     {
         "imagen": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/024ce1ce32bc98b0b93e3313f43b1d7f.jpg",
-        "titulo": "Demon lord retry",
+        "titulo": "Demon Lord Retry",
         "descripcion": "Akira Oono es un programador que se convierte en el Señor Demonio en un juego de realidad virtual. Ahora, debe proteger a los habitantes de su mundo.",
         "doblaje": "Sub | Dob",
         "episodios": "12 episodios",
         "temporadas": "1 temporada",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Acción, Fantasía", 
         "rating": "4.9",
         "votos": "1,000"
     },
@@ -62,18 +61,18 @@
         "doblaje": "Sub | Dob",
         "episodios": "25 episodios",
         "temporadas": "2 temporadas",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Comedia, Acción", 
         "rating": "4.9",
         "votos": "1,000"
     },
     {
         "imagen": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/7cf782a4e1b370ca33b36b33560c6542.jpg",
-        "titulo" : "Blood Blockade Battlefront",
+        "titulo": "Blood Blockade Battlefront",
         "descripcion": "Leonardo Watch es un fotógrafo que se muda a Hellsalem's Lot, una ciudad donde humanos y monstruos conviven. Allí, se une a Libra, una organización que protege a la ciudad.",
         "doblaje": "Sub | Dob",
         "episodios": "24 episodios",
         "temporadas": "2 temporadas",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Acción, Misterio", 
         "rating": "4.9",
         "votos": "1,000"
     },
@@ -84,18 +83,18 @@
         "doblaje": "Sub | Dob",
         "episodios": "12 episodios",
         "temporadas": "1 temporada",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Aventura, Fantasía", 
         "rating": "4.9",
         "votos": "1,000"
     },
     {
         "imagen": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/04ed58f0fd7dc25a4a6369d964df66f7.jpe",
-        "titulo": "The strongest Tanks laberynth raid",
+        "titulo": "The Strongest Tanks Laberynth Raid",
         "descripcion": "Después de ser asesinado, Akira Oono se convierte en el Señor Demonio en un juego de realidad virtual. Ahora, debe proteger a los habitantes de su mundo.",
         "doblaje": "Sub | Dob",
         "episodios": "12 episodios",
         "temporadas": "1 temporada",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Acción, Aventura", 
         "rating": "4.9",
         "votos": "1,000"
     },
@@ -106,7 +105,7 @@
         "doblaje": "Sub | Dob",
         "episodios": "26 episodios",
         "temporadas": "1 temporada",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Ciencia Ficción, Acción", 
         "rating": "4.9",
         "votos": "1,000"
     },
@@ -117,18 +116,7 @@
         "doblaje": "Sub | Dob",
         "episodios": "12 episodios",
         "temporadas": "1 temporada",
-        "genero": "Acción, Aventura, Fantasía",
-        "rating": "4.9",
-        "votos": "1,000"
-    },
-    {
-        "imagen": "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=480,height=720/catalog/crunchyroll/59a606bb77e39a4935435962ee8d6c4d.jpg",
-        "titulo" : "Link Click",
-        "descripcion": "Después de ser asesinado, Akira Oono se convierte en el Señor Demonio en un juego de realidad virtual. Ahora, debe proteger a los habitantes de su mundo.",
-        "doblaje": "Sub | Dob",
-        "episodios": "12 episodios",
-        "temporadas": "1 temporada",
-        "genero": "Acción, Aventura, Fantasía",
+        "genero": "Acción, Aventura", 
         "rating": "4.9",
         "votos": "1,000"
     }

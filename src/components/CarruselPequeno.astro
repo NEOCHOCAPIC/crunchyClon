@@ -1,19 +1,30 @@
 ---
-// Carousel.astro
 import CardAnime from "./CardAnime.astro";
-import Animes from "../data/Carrusel.json";
+interface Anime {
+  imagen: string;
+  titulo: string;
+  descripcion: string;
+  doblaje: string;
+  episodios: string;
+  temporadas: string;
+  genero: string;
+  rating: string;
+  votos: string;
+}
+
+interface Props {
+  Animes: Anime[]; // Permite que Animes sea null
+}
+const { Animes } = Astro.props;
 ---
 
-<div class="relative w-full max-w-7xl mx-auto mt-3" id="carousel-container">
+<div class="relative w-full max-w-7xl mx-auto mt-3 carousel-container">
   <h2 class="text-2xl font-bold text-white mb-6 px-4">
     Nuestras recomendaciones
   </h2>
 
-  <div class="relative overflow-hidden" id="carousel-wrapper">
-    <div
-      class="flex transition-transform duration-500 ease-out"
-      id="carousel-track"
-    >
+  <div class="relative overflow-hidden carousel-wrapper">
+    <div class="flex transition-transform duration-500 ease-out carousel-track">
       {
         Animes.map((anime) => (
           <CardAnime
@@ -32,8 +43,7 @@ import Animes from "../data/Carrusel.json";
   </div>
 
   <button
-    id="prev-button"
-    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
+    class="prev-button absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -51,8 +61,7 @@ import Animes from "../data/Carrusel.json";
   </button>
 
   <button
-    id="next-button"
-    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
+    class="next-button absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -71,63 +80,64 @@ import Animes from "../data/Carrusel.json";
 </div>
 
 <script>
-  const carouselTrack = document.getElementById(
-    "carousel-track"
-  ) as HTMLElement;
-  const prevButton = document.getElementById(
-    "prev-button"
-  ) as HTMLButtonElement;
-  const nextButton = document.getElementById(
-    "next-button"
-  ) as HTMLButtonElement;
-  let currentIndex = 0;
+  document.querySelectorAll(".carousel-container").forEach((container) => {
+    const carouselTrack = container.querySelector(
+      ".carousel-track"
+    ) as HTMLElement;
+    const prevButton = container.querySelector(
+      ".prev-button"
+    ) as HTMLButtonElement;
+    const nextButton = container.querySelector(
+      ".next-button"
+    ) as HTMLButtonElement;
+    let currentIndex = 0;
 
-  function getItemsPerPage() {
-    if (window.innerWidth < 640) return 2;
-    if (window.innerWidth < 768) return 2;
-    if (window.innerWidth < 1024) return 3;
-    if (window.innerWidth < 1280) return 4;
-    return 5;
-  }
-
-  function updateCarouselPosition() {
-    const itemsPerPage = getItemsPerPage();
-    const totalItems = carouselTrack.children.length;
-    const itemWidth = carouselTrack.children[0].clientWidth; // Ancho exacto de una tarjeta
-    const offset = currentIndex * itemWidth;
-
-    carouselTrack.style.transform = `translateX(-${offset}px)`;
-
-    // Actualizar la lógica de desactivación de botones
-    prevButton.disabled = currentIndex === 0;
-    nextButton.disabled = currentIndex >= totalItems - 1; // Se desactiva solo cuando llega al último elemento
-  }
-
-  nextButton.addEventListener("click", () => {
-    const itemsPerPage = getItemsPerPage();
-    const totalItems = carouselTrack.children.length;
-
-    if (currentIndex < totalItems - itemsPerPage) {
-      currentIndex++;
-      updateCarouselPosition();
+    function getItemsPerPage(): number {
+      if (window.innerWidth < 640) return 2;
+      if (window.innerWidth < 768) return 2;
+      if (window.innerWidth < 1024) return 3;
+      if (window.innerWidth < 1280) return 4;
+      return 5;
     }
-  });
 
-  prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarouselPosition();
+    function updateCarouselPosition() {
+      const itemsPerPage = getItemsPerPage();
+      const totalItems = carouselTrack.children.length;
+      const itemWidth = (carouselTrack.children[0] as HTMLElement).offsetWidth;
+      const offset = currentIndex * itemWidth;
+
+      carouselTrack.style.transform = `translateX(-${offset}px)`;
+
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex >= totalItems - itemsPerPage;
     }
-  });
 
-  window.addEventListener("resize", () => {
-    const itemsPerPage = getItemsPerPage();
-    currentIndex = Math.min(
-      currentIndex,
-      Math.max(0, carouselTrack.children.length - itemsPerPage)
-    );
+    nextButton.addEventListener("click", () => {
+      const itemsPerPage = getItemsPerPage();
+      const totalItems = carouselTrack.children.length;
+
+      if (currentIndex < totalItems - itemsPerPage) {
+        currentIndex++;
+        updateCarouselPosition();
+      }
+    });
+
+    prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarouselPosition();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      const itemsPerPage = getItemsPerPage();
+      currentIndex = Math.min(
+        currentIndex,
+        Math.max(0, carouselTrack.children.length - itemsPerPage)
+      );
+      updateCarouselPosition();
+    });
+
     updateCarouselPosition();
   });
-
-  updateCarouselPosition(); // Inicializa la posición del carrusel
 </script>
