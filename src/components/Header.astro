@@ -3,7 +3,7 @@ import crunchy from "../assets/img/cruncgy.svg";
 import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
 ---
 
-<header class="bg-[#23252b] fixed z-50 w-full h-16">
+<header class="bg-negro fixed z-[70] w-full h-16">
   <div
     class="flex max-w-7xl md:mx-auto justify-between items-center p-0 mt-0 mx-4"
   >
@@ -153,93 +153,82 @@ import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
 <!-- Menú lateral movil -->
 <div
   id="sidebar"
-  class="fixed left-0 top-16 w-64 h-[calc(100%-4rem)] bg-gray-900 transform -translate-x-full transition-transform duration-300 lg:hidden z-40 overflow-y-auto"
+  class="fixed left-0 top-16 w-full h-[calc(100%-4rem)] bg-[#141519] transform -translate-x-full transition-transform duration-300 lg:hidden z-[60] overflow-y-auto"
 >
-  <nav class="mt-4">
-    <ul class="space-y-2 text-white">
+  <nav class="mt-4 flex flex-col">
+    <div>
+      <small class="text-gris px-4 py-3 text-xl">Explorar</small>
+    </div>
+    <ul class="space-y-2 text-white pb-5">
       <li>
         <a
           href="#"
           class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
-          >Explorar</a
+          >Popular</a
         >
       </li>
       <li>
         <a
           href="#"
           class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
-          >Juegos</a
+          >Novedades</a
         >
       </li>
       <li>
         <a
           href="#"
           class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
-          >Noticias</a
+          >Alfabeticos</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
+          >Temporada de simulcast</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
+          >Calendario de lanzamientos</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
+          >Videos Musicales y concierto</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
+          >Generos</a
         >
       </li>
     </ul>
+    <div class="text-white border-t border-gris pt-5">
+      <ul>
+        <li>
+          <a
+            href="#"
+            class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
+            >Juegos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
+            >Noticias</a
+          >
+        </li>
+      </ul>
+    </div>
   </nav>
-  <div class="mt-4 text-white">
-    <a
-      href="#"
-      class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
-    >
-      <svg
-        class="w-6 h-6 inline-block mr-2"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-      </svg>
-      Buscar
-    </a>
-    <a
-      href="#"
-      class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
-    >
-      <svg
-        class="w-6 h-6 inline-block mr-2"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-      </svg>
-      Guardado
-    </a>
-    <a
-      href="#"
-      class="block px-4 py-2 hover:bg-gray-800 transition duration-150 ease-in-out"
-    >
-      <svg
-        class="w-6 h-6 inline-block mr-2"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-        ></path>
-      </svg>
-      Cuenta
-    </a>
-  </div>
 </div>
 <script>
   // Selecciona los elementos del DOM
@@ -249,6 +238,13 @@ import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
   // Función para abrir y cerrar el menú lateral
   function toggleSidebar(): void {
     sidebar.classList.toggle("-translate-x-full");
+
+    // Prevenir el scroll del fondo
+    if (sidebar.classList.contains("-translate-x-full")) {
+      document.body.style.overflow = ""; // Permitir scroll
+    } else {
+      document.body.style.overflow = "hidden"; // Prevenir scroll
+    }
   }
 
   // Abre y cierra el menú lateral al hacer clic en el botón de menú
@@ -257,14 +253,12 @@ import CrunchyMovil from "../assets/img/CrunchyMovil.svg";
     toggleSidebar();
   });
 
-  // Cierra el menú lateral si se hace clic fuera de él
-  document.addEventListener("click", (event: MouseEvent) => {
-    if (
-      !sidebar.contains(event.target as Node) &&
-      !menuButton.contains(event.target as Node)
-    ) {
+  // Cierra el menú lateral si se hace clic en un enlace dentro de él
+  sidebar.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       sidebar.classList.add("-translate-x-full");
-    }
+      document.body.style.overflow = ""; // Permitir scroll
+    });
   });
 
   // Previene que los clics dentro del sidebar cierren el menú
